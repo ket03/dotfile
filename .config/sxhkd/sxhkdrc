@@ -20,13 +20,13 @@ super + {_,shift + }w
 
 # Jumps between workspaces
 super + 1
-        bspc desktop -f ^1 && feh --bg-fill /home/someone/.config/sxhkd/images/first
+        bspc desktop -f ^1 && feh --bg-fill ~/.config/sxhkd/images/first
 super + 2
-        bspc desktop -f ^2 && feh --bg-fill /home/someone/.config/sxhkd/images/second
+        bspc desktop -f ^2 && feh --bg-fill ~/.config/sxhkd/images/second
 super + 3
-        bspc desktop -f ^3 && feh --bg-fill /home/someone/.config/sxhkd/images/third
+        bspc desktop -f ^3 && feh --bg-fill ~/.config/sxhkd/images/third
 super + 4
-        bspc desktop -f ^4 && feh --bg-fill /home/someone/.config/sxhkd/images/fourth
+        bspc desktop -f ^4 && feh --bg-fill ~/.config/sxhkd/images/fourth
 
 # reload sxhkd:
 super + Escape

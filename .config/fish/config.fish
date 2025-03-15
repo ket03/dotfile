@@ -1,4 +1,4 @@
 if status is-interactive
     neofetch
 end
-set -x PATH $PATH /home/someone/rofi-wifi-menu
+set -x PATH $PATH ~/rofi-wifi-menu
