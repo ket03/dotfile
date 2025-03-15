@@ -72,8 +72,9 @@ Most configurations are located in the following directories:
 ```
 
 ## Installation
-Just clone and move all files to your ~/
-Launch script install.sh
-After launch commands.sh
-Change .xinitrc to your resolution
-Change /etc/sudoers "someone" to your username
+- Just clone and move all files to your ~/
+- Launch script install.sh
+- After launch commands.sh
+- Change .xinitrc to your resolution
+- Change /etc/sudoers "someone" to your username
+**COMPLETE**
