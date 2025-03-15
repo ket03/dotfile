@@ -1,16 +1,16 @@
-# Переключение фокуса между окнами
+# Switch active window
 alt + Tab
 	bspc node -f next.local.!hidden.window || bspc node -f prev.local.!hidden.window
 
-# Перемещение активного окна на другой рабочий стол
+# Move active window to n-workspace
 super + shift + {1-4}
 	bspc node -d '^{1-4}'
 
-# Перемещение активного окна на другой рабочий стол стрелками
+# Move active window to another workspace with arrows
 super + shift + {Left,Right}
 	bspc node -d {prev,next} --follow
 
-# Переключение полноэкранного режима для активного окна
+# Turn on fullscreen and turn off
 super + f
 	bspc node -t ~fullscreen
 
@@ -36,11 +36,11 @@ super + Escape
 ##########################################################################
 
 
-# Яркость
+# Adjust brightness
 XF86MonBrightness{Up,Down}  
   brightnessctl s 10{+,-}
 
-# Звук
+# Adjust sound
 XF86AudioRaiseVolume
     pactl set-sink-mute @DEFAULT_SINK@ false && pactl set-sink-volume @DEFAULT_SINK@ +5%
 
@@ -50,10 +50,12 @@ XF86AudioLowerVolume
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# Скриншот с интерфейсом для редактирования
+# Screenshot
 super + p
     flameshot gui
 
+
+##########################################################################
 
 
 # terminal emulator
