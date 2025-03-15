@@ -1,0 +1,188 @@
+/* Конфигурация Rofi в стиле Dracula */
+configuration {
+    modi: "window,run,ssh,drun";
+    font: "JetBrains Mono 14"; /* Увеличенный размер шрифта */
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "Applications";
+    display-window: "Windows";
+    display-run: "Run";
+    display-ssh: "SSH";
+    drun-display-format: "{name}";
+    sidebar-mode: true;
+    terminal: "alacritty";
+}
+
+* {
+    /* Цвета Dracula */
+    background:     #282a36;
+    background-alt: #44475a;
+    foreground:     #f8f8f2;
+    selected:       #bd93f9;
+    active:         #50fa7b;
+    urgent:         #ff5555;
+    purple:         #bd93f9;
+    pink:           #ff79c6;
+    blue:           #8be9fd;
+    green:          #50fa7b;
+    yellow:         #f1fa8c;
+    red:            #ff5555;
+    orange:         #ffb86c;
+}
+
+window {
+    background-color: @background;
+    border:           2px;
+    border-color:     @purple;
+    border-radius:    8px;
+    padding:          30;
+    width:            35%;
+    height:           50%;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:       2px solid 0px 0px;
+    border-color: @purple;
+    padding:      8px;
+}
+
+textbox {
+    text-color: @foreground;
+}
+
+listview {
+    fixed-height: 0;
+    border:       0;
+    spacing:      12px; /* Увеличенный интервал между строками */
+    scrollbar:    true;
+    padding:      8px 0px 0px;
+    lines:        10; /* Показывать только 10 приложений */
+    /* Отключаем чередование строк */
+    cycle:        false;
+    /* Принудительно устанавливаем темный фон для всех элементов */
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+    alternate-active-background: @active;
+    alternate-active-foreground: @background;
+    alternate-urgent-background: @urgent;
+    alternate-urgent-foreground: @foreground;
+}
+
+element {
+    border:        0;
+    border-radius: 4px;
+    padding:       12px; /* Увеличенный отступ для элементов */
+}
+
+element normal.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+element normal.urgent {
+    background-color: @urgent;
+    text-color:       @foreground;
+}
+
+element normal.active {
+    background-color: @active;
+    text-color:       @background;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color:       @background;
+}
+
+element selected.urgent {
+    background-color: @urgent;
+    text-color:       @foreground;
+}
+
+element selected.active {
+    background-color: @green;
+    text-color:       @background;
+}
+
+element alternate.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+element alternate.urgent {
+    background-color: @urgent;
+    text-color:       @foreground;
+}
+
+element alternate.active {
+    background-color: @active;
+    text-color:       @background;
+}
+
+element-icon {
+    size:           2.0em; /* Увеличенный размер иконок */
+    vertical-align: 0.5;
+    padding:        0 10px 0 0; /* Добавлен отступ справа от иконки */
+}
+
+element-text {
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+scrollbar {
+    width:        4px;
+    border:       0;
+    handle-color: @purple;
+    handle-width: 8px;
+    padding:      0;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @foreground;
+    padding:    12px;
+    children:   [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+case-indicator {
+    spacing:    0;
+    text-color: @foreground;
+}
+
+entry {
+    spacing:    0;
+    text-color: @foreground;
+}
+
+prompt {
+    spacing:    0;
+    text-color: @pink;
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em;
+    text-color: @pink;
+}
+
+mode-switcher {
+    border:       2px 0 0;
+    border-color: @purple;
+}
+
+button {
+    spacing:    0;
+    text-color: @foreground;
+}
+
+button selected {
+    background-color: @selected;
+    text-color:       @background;
+}

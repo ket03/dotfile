@@ -1,0 +1,69 @@
+# Переключение фокуса между окнами
+alt + Tab
+	bspc node -f next.local.!hidden.window || bspc node -f prev.local.!hidden.window
+
+# Перемещение активного окна на другой рабочий стол
+super + shift + {1-4}
+	bspc node -d '^{1-4}'
+
+# Перемещение активного окна на другой рабочий стол стрелками
+super + shift + {Left,Right}
+	bspc node -d {prev,next} --follow
+
+# Переключение полноэкранного режима для активного окна
+super + f
+	bspc node -t ~fullscreen
+
+# close and kill
+super + {_,shift + }w
+        bspc node -{c,k}
+
+# Jumps between workspaces
+super + 1
+        bspc desktop -f ^1 && feh --bg-fill /home/someone/.config/sxhkd/images/first
+super + 2
+        bspc desktop -f ^2 && feh --bg-fill /home/someone/.config/sxhkd/images/second
+super + 3
+        bspc desktop -f ^3 && feh --bg-fill /home/someone/.config/sxhkd/images/third
+super + 4
+        bspc desktop -f ^4 && feh --bg-fill /home/someone/.config/sxhkd/images/fourth
+
+# reload sxhkd:
+super + Escape
+        pkill -USR1 -x sxhkd
+
+
+##########################################################################
+
+
+# Яркость
+XF86MonBrightness{Up,Down}  
+  brightnessctl s 10{+,-}
+
+# Звук
+XF86AudioRaiseVolume
+    pactl set-sink-mute @DEFAULT_SINK@ false && pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+XF86AudioLowerVolume
+    pactl set-sink-mute @DEFAULT_SINK@ false && pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Скриншот с интерфейсом для редактирования
+super + p
+    flameshot gui
+
+
+
+# terminal emulator
+super + Return
+	alacritty
+
+# program launcher
+super + @space
+	rofi -show run
+
+#firefox
+super + b
+	firefox
