@@ -1,3 +1,2 @@
-xrandr --output 'eDP-1' --mode '1920x1200' &
 ~/.fehbg &
-exec bspwm
+exec bspwm &

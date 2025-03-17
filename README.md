@@ -74,7 +74,51 @@ Most configurations are located in the following directories:
 ## Installation
 - Just clone and move all files to your ~/
 - Launch script install.sh
-- After launch commands.sh
-- Change .xinitrc to your resolution
-- Change /etc/sudoers "someone" to your username
-**COMPLETE**
+- Launch commands.sh
+
+- Add in .xinitrc to the end of the file:
+```
+xrandr --output 'eDP-1' --mode '1920x1200' &
+```
+Change 'eDP-1' to your display, '1920x1200' - to your resolution
+
+- Add in /etc/sudoers (call with sudo):
+```
+someone ALL=(ALL) NOPASSWD: /usr/bin/hiddify
+someone ALL=(ALL) NOPASSWD: /usr/bin/shutdown
+someone ALL=(ALL) NOPASSWD: /usr/bin/reboot
+someone ALL=(ALL) NOPASSWD: /usr/bin/systemctl suspend
+someone ALL=(ALL) NOPASSWD: /usr/bin/pacman
+```
+Change "someone" to your username
+
+- Add or Create /etc/X11/xorg.conf.d
+```
+Section "InputClass"
+  Identifier "touchpad"
+  Driver "libinput"
+  MatchIsTouchpad "on"
+  Option "Tapping" "on"
+  Option "TappingButtonMap" "lrm"
+  Option "NaturalScrolling" "on"
+  Option "AccelSpeed" "0.5"
+  Option "ClickMethod" "clickfinger"
+EndSection
+```
+
+- Add or Create /sys/class/leds/platform::kbd_backlight
+```
+2
+```
+Just paste "2" in this file
+
+- Remove images
+```
+rm -rf readme_images
+```
+
+```
+sudo reboot
+```
+
+## **COMPLETE**
